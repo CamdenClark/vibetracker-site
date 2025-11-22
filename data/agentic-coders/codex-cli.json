@@ -1,0 +1,50 @@
+{
+  "name": "Codex CLI",
+  "vendor": "OpenAI",
+  "website": "https://github.com/openai/codex-cli",
+  "description": "Command-line interface for OpenAI Codex",
+  "capabilities": {
+    "slash_commands": {
+      "supported": false,
+      "customizable": false,
+      "details": "No slash command support"
+    },
+    "multi_file_editing": {
+      "supported": true,
+      "details": "Can work with multiple files"
+    },
+    "codebase_understanding": {
+      "supported": false,
+      "details": "Limited context window, no codebase indexing"
+    },
+    "git_integration": {
+      "supported": false,
+      "details": "No built-in git integration"
+    },
+    "terminal_access": {
+      "supported": true,
+      "details": "Can suggest and execute terminal commands"
+    },
+    "web_search": {
+      "supported": false,
+      "details": "Not available"
+    },
+    "mcp_servers": {
+      "supported": false,
+      "details": "Not available"
+    },
+    "parallel_agents": {
+      "supported": false,
+      "details": "Single agent interaction model"
+    },
+    "hooks": {
+      "supported": false,
+      "details": "No hooks or customization system"
+    }
+  },
+  "pricing": {
+    "model": "usage-based",
+    "details": "Based on OpenAI API usage"
+  },
+  "last_updated": "2025-01-22"
+}
