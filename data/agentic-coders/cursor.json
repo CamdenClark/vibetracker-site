@@ -1,0 +1,46 @@
+{
+  "name": "Cursor",
+  "vendor": "Anysphere",
+  "website": "https://cursor.com",
+  "description": "AI-first code editor built on VSCode",
+  "capabilities": {
+    "slashCommands": {
+      "supported": true,
+      "customizable": false,
+      "details": "Built-in slash commands like /edit, /explain, /debug"
+    },
+    "multiFileEditing": {
+      "supported": true,
+      "details": "Can edit multiple files with AI suggestions"
+    },
+    "codebaseUnderstanding": {
+      "supported": true,
+      "details": "Codebase indexing for better context awareness"
+    },
+    "gitIntegration": {
+      "supported": true,
+      "details": "Standard VSCode git integration"
+    },
+    "terminalAccess": {
+      "supported": true,
+      "details": "Integrated terminal with AI assistance"
+    },
+    "webSearch": {
+      "supported": false,
+      "details": "Not available"
+    },
+    "mcpServers": {
+      "supported": false,
+      "details": "Not available"
+    },
+    "parallelAgents": {
+      "supported": false,
+      "details": "Single agent interaction model"
+    }
+  },
+  "pricing": {
+    "model": "subscription",
+    "details": "Free tier available, Pro at $20/month, Business at custom pricing"
+  },
+  "lastUpdated": "2025-01-22"
+}

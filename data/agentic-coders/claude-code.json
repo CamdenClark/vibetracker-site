@@ -1,0 +1,46 @@
+{
+  "name": "Claude Code",
+  "vendor": "Anthropic",
+  "website": "https://claude.com/claude-code",
+  "description": "Interactive CLI tool for software engineering tasks powered by Claude AI",
+  "capabilities": {
+    "slashCommands": {
+      "supported": true,
+      "customizable": true,
+      "details": "Users can create custom slash commands in .claude/commands/ directory"
+    },
+    "multiFileEditing": {
+      "supported": true,
+      "details": "Can read, edit, and create multiple files in parallel"
+    },
+    "codebaseUnderstanding": {
+      "supported": true,
+      "details": "Uses specialized Explore agents for codebase exploration and analysis"
+    },
+    "gitIntegration": {
+      "supported": true,
+      "details": "Full git support including commits, branches, and PR creation via gh CLI"
+    },
+    "terminalAccess": {
+      "supported": true,
+      "details": "Can execute bash commands with proper sandboxing"
+    },
+    "webSearch": {
+      "supported": true,
+      "details": "Built-in web search and fetch capabilities"
+    },
+    "mcpServers": {
+      "supported": true,
+      "details": "Supports Model Context Protocol (MCP) servers for extensibility"
+    },
+    "parallelAgents": {
+      "supported": true,
+      "details": "Can launch multiple specialized agents for complex tasks"
+    }
+  },
+  "pricing": {
+    "model": "usage-based",
+    "details": "Based on Claude API usage"
+  },
+  "lastUpdated": "2025-01-22"
+}
