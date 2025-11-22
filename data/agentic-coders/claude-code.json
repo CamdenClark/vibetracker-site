@@ -4,43 +4,47 @@
   "website": "https://claude.com/claude-code",
   "description": "Interactive CLI tool for software engineering tasks powered by Claude AI",
   "capabilities": {
-    "slashCommands": {
+    "slash_commands": {
       "supported": true,
       "customizable": true,
       "details": "Users can create custom slash commands in .claude/commands/ directory"
     },
-    "multiFileEditing": {
+    "multi_file_editing": {
       "supported": true,
       "details": "Can read, edit, and create multiple files in parallel"
     },
-    "codebaseUnderstanding": {
+    "codebase_understanding": {
       "supported": true,
       "details": "Uses specialized Explore agents for codebase exploration and analysis"
     },
-    "gitIntegration": {
+    "git_integration": {
       "supported": true,
       "details": "Full git support including commits, branches, and PR creation via gh CLI"
     },
-    "terminalAccess": {
+    "terminal_access": {
       "supported": true,
       "details": "Can execute bash commands with proper sandboxing"
     },
-    "webSearch": {
+    "web_search": {
       "supported": true,
       "details": "Built-in web search and fetch capabilities"
     },
-    "mcpServers": {
+    "mcp_servers": {
       "supported": true,
       "details": "Supports Model Context Protocol (MCP) servers for extensibility"
     },
-    "parallelAgents": {
+    "parallel_agents": {
       "supported": true,
       "details": "Can launch multiple specialized agents for complex tasks"
+    },
+    "hooks": {
+      "supported": true,
+      "details": "Supports custom hooks configured in settings that execute shell commands in response to events like tool calls"
     }
   },
   "pricing": {
     "model": "usage-based",
     "details": "Based on Claude API usage"
   },
-  "lastUpdated": "2025-01-22"
+  "last_updated": "2025-01-22"
 }

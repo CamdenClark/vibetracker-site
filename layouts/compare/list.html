@@ -1,0 +1,188 @@
+{{ define "main" }}
+<article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+  <header>
+    <h1 class="f1 athelas">{{ .Title }}</h1>
+  </header>
+
+  <section class="content">
+    {{ .Content }}
+  </section>
+
+  {{/* Build tools array from JSON data files */}}
+  {{ $tools := slice }}
+  {{ $agenticCoders := index $.Site.Data "agentic-coders" }}
+  {{ range $filename, $data := $agenticCoders }}
+    {{ $tools = $tools | append $data }}
+  {{ end }}
+
+  {{ if gt (len $tools) 0 }}
+  <section class="comparison-matrix mt4">
+    <h2 class="f2 athelas">Feature Comparison Matrix</h2>
+
+    <div class="overflow-auto">
+      <table class="f6 w-100 mw8 center" cellspacing="0">
+        <thead>
+          <tr class="stripe-dark">
+            <th class="fw6 tl pa3 bg-white">Feature</th>
+            {{ range $tools }}
+              <th class="fw6 tc pa3 bg-white">{{ .name }}</th>
+            {{ end }}
+          </tr>
+        </thead>
+        <tbody class="lh-copy">
+          <!-- Slash Commands Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Slash Commands</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.slash_commands.supported }}
+                  ✓
+                  {{ if .capabilities.slash_commands.customizable }}
+                    <span class="f7 db">(customizable)</span>
+                  {{ end }}
+                {{ else }}
+                  ✗
+                {{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- Multi-file Editing Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Multi-file Editing</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.multi_file_editing.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- Codebase Understanding Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Codebase Understanding</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.codebase_understanding.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- Git Integration Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Git Integration</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.git_integration.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- Terminal Access Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Terminal Access</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.terminal_access.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- Web Search Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Web Search</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.web_search.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- MCP Servers Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">MCP Servers</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.mcp_servers.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- Parallel Agents Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Parallel Agents</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.parallel_agents.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+
+          <!-- Hooks Row -->
+          <tr class="stripe-dark">
+            <td class="pa3 tl">Hooks</td>
+            {{ range $tools }}
+              <td class="pa3 tc">
+                {{ if .capabilities.hooks.supported }}✓{{ else }}✗{{ end }}
+              </td>
+            {{ end }}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="feature-details mt4">
+    <h2 class="f2 athelas">Feature Details</h2>
+
+    {{ $capabilities := slice "slash_commands" "multi_file_editing" "codebase_understanding" "git_integration" "terminal_access" "web_search" "mcp_servers" "parallel_agents" "hooks" }}
+    {{ $capabilityNames := dict
+      "slash_commands" "Slash Commands"
+      "multi_file_editing" "Multi-file Editing"
+      "codebase_understanding" "Codebase Understanding"
+      "git_integration" "Git Integration"
+      "terminal_access" "Terminal Access"
+      "web_search" "Web Search"
+      "mcp_servers" "MCP Servers"
+      "parallel_agents" "Parallel Agents"
+      "hooks" "Hooks"
+    }}
+
+    {{ range $capKey := $capabilities }}
+      <div class="capability-section mt3">
+        <h3 class="f3">{{ index $capabilityNames $capKey }}</h3>
+        <ul class="list pl0">
+          {{ range $tools }}
+            {{ $cap := index .capabilities $capKey }}
+            <li class="pv2">
+              <strong>{{ .name }}:</strong> {{ $cap.details }}
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+  </section>
+
+  <section class="pricing mt4">
+    <h2 class="f2 athelas">Pricing</h2>
+    <ul class="list pl0">
+      {{ range $tools }}
+        <li class="pv2">
+          <strong>{{ .name }}:</strong> {{ .pricing.details }}
+        </li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <footer class="mt4 f6 gray">
+    <p><em>Data sourced from <code>/data/agentic-coders/</code> JSON files</em></p>
+    <p>Last updated:
+      {{ range $index, $tool := $tools }}
+        {{ $tool.name }}: {{ $tool.last_updated }}{{ if ne (add $index 1) (len $tools) }}, {{ end }}
+      {{ end }}
+    </p>
+  </footer>
+  {{ else }}
+    <p>No tools data found!</p>
+  {{ end }}
+</article>
+{{ end }}

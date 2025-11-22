@@ -1,6 +1,8 @@
-# Agentic Coder Data
+# Agentic Coder Data Schema
 
-This directory contains JSON files describing various agentic coding tools and their capabilities.
+This file documents the JSON schema for agentic coding tool data stored in `/data/agentic-coders/`.
+
+The comparison pages are dynamically generated from these JSON files using Hugo templates.
 
 ## JSON Schema
 
@@ -13,45 +15,49 @@ Each JSON file should follow this structure:
   "website": "https://example.com",
   "description": "Brief description of the tool",
   "capabilities": {
-    "slashCommands": {
+    "slash_commands": {
       "supported": true/false,
       "customizable": true/false,
       "details": "Additional details about slash commands"
     },
-    "multiFileEditing": {
+    "multi_file_editing": {
       "supported": true/false,
       "details": "Details about multi-file editing capabilities"
     },
-    "codebaseUnderstanding": {
+    "codebase_understanding": {
       "supported": true/false,
       "details": "How the tool understands and indexes codebases"
     },
-    "gitIntegration": {
+    "git_integration": {
       "supported": true/false,
       "details": "Git integration capabilities"
     },
-    "terminalAccess": {
+    "terminal_access": {
       "supported": true/false,
       "details": "Terminal/shell access details"
     },
-    "webSearch": {
+    "web_search": {
       "supported": true/false,
       "details": "Web search and fetch capabilities"
     },
-    "mcpServers": {
+    "mcp_servers": {
       "supported": true/false,
       "details": "Model Context Protocol support"
     },
-    "parallelAgents": {
+    "parallel_agents": {
       "supported": true/false,
       "details": "Ability to run multiple agents in parallel"
+    },
+    "hooks": {
+      "supported": true/false,
+      "details": "Support for custom hooks/callbacks that execute on events"
     }
   },
   "pricing": {
     "model": "subscription|usage-based|free",
     "details": "Pricing details"
   },
-  "lastUpdated": "YYYY-MM-DD"
+  "last_updated": "YYYY-MM-DD"
 }
 ```
 
@@ -62,12 +68,13 @@ To add a new agentic coder:
 1. Create a new JSON file in this directory named `tool-name.json`
 2. Follow the schema above
 3. Include accurate, up-to-date information about the tool's capabilities
-4. Update the `lastUpdated` field with the current date
+4. Update the `last_updated` field with the current date
 
 ## Current Tools
 
 - **claude-code.json** - Anthropic's Claude Code CLI tool
 - **cursor.json** - Anysphere's Cursor IDE
+- **codex-cli.json** - OpenAI's Codex CLI tool
 
 ## Future Enhancements
 

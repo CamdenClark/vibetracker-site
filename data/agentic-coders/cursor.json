@@ -4,43 +4,47 @@
   "website": "https://cursor.com",
   "description": "AI-first code editor built on VSCode",
   "capabilities": {
-    "slashCommands": {
+    "slash_commands": {
       "supported": true,
       "customizable": false,
       "details": "Built-in slash commands like /edit, /explain, /debug"
     },
-    "multiFileEditing": {
+    "multi_file_editing": {
       "supported": true,
       "details": "Can edit multiple files with AI suggestions"
     },
-    "codebaseUnderstanding": {
+    "codebase_understanding": {
       "supported": true,
       "details": "Codebase indexing for better context awareness"
     },
-    "gitIntegration": {
+    "git_integration": {
       "supported": true,
       "details": "Standard VSCode git integration"
     },
-    "terminalAccess": {
+    "terminal_access": {
       "supported": true,
       "details": "Integrated terminal with AI assistance"
     },
-    "webSearch": {
+    "web_search": {
       "supported": false,
       "details": "Not available"
     },
-    "mcpServers": {
+    "mcp_servers": {
       "supported": false,
       "details": "Not available"
     },
-    "parallelAgents": {
+    "parallel_agents": {
       "supported": false,
       "details": "Single agent interaction model"
+    },
+    "hooks": {
+      "supported": true,
+      "details": "Supports .cursorrules and custom rules for AI behavior"
     }
   },
   "pricing": {
     "model": "subscription",
     "details": "Free tier available, Pro at $20/month, Business at custom pricing"
   },
-  "lastUpdated": "2025-01-22"
+  "last_updated": "2025-01-22"
 }

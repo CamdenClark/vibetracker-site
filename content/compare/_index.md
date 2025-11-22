@@ -4,10 +4,6 @@ date = '2025-01-22T00:00:00-00:00'
 draft = false
 +++
 
-# Agentic Coder Comparison
+Compare features and capabilities of popular agentic coding tools including Claude Code, Cursor, and Codex CLI.
 
-Compare features and capabilities of popular agentic coding tools.
-
-This page provides a comprehensive comparison of various AI-powered coding assistants and their capabilities, with a focus on features like slash commands, multi-file editing, codebase understanding, and more.
-
-The data for this comparison is stored in JSON format and can be programmatically processed to generate detailed feature matrices.
+This comparison is automatically generated from JSON data files stored in `/data/agentic-coders/`. The feature matrix below provides a comprehensive overview of each tool's capabilities, including slash commands, multi-file editing, codebase understanding, hooks support, and more.
