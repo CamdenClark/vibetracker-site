@@ -2,6 +2,7 @@
   "name": "Cursor",
   "vendor": "Anysphere",
   "website": "https://cursor.com",
+  "docs_url": "https://cursor.com/docs",
   "description": "AI-first code editor built on VSCode",
   "capabilities": {
     "slash_commands": {
@@ -15,15 +16,18 @@
     },
     "codebase_understanding": {
       "supported": true,
-      "details": "Codebase indexing for better context awareness"
+      "details": "Codebase indexing for better context awareness",
+      "docs_url": "https://cursor.com/docs/context/codebase-indexing"
     },
     "git_integration": {
       "supported": true,
-      "details": "Standard VSCode git integration"
+      "details": "Standard VSCode git integration",
+      "docs_url": "https://code.visualstudio.com/docs/sourcecontrol/overview"
     },
     "terminal_access": {
       "supported": true,
-      "details": "Integrated terminal with AI assistance"
+      "details": "Integrated terminal with AI assistance",
+      "docs_url": "https://cursor.com/docs/cli/overview"
     },
     "web_search": {
       "supported": false,
@@ -39,7 +43,8 @@
     },
     "hooks": {
       "supported": true,
-      "details": "Supports .cursorrules and custom rules for AI behavior"
+      "details": "Supports .cursorrules and custom rules for AI behavior",
+      "docs_url": "https://cursor.com/docs/context/rules"
     }
   },
   "pricing": {

@@ -25,7 +25,13 @@
           <tr class="stripe-dark">
             <th class="fw6 tl pa3 bg-white">Feature</th>
             {{ range $tools }}
-              <th class="fw6 tc pa3 bg-white">{{ .name }}</th>
+              <th class="fw6 tc pa3 bg-white">
+                {{ if .docs_url }}
+                  <a href="{{ .docs_url }}" class="link dark-gray hover-blue" target="_blank" rel="noopener noreferrer">{{ .name }}</a>
+                {{ else }}
+                  {{ .name }}
+                {{ end }}
+              </th>
             {{ end }}
           </tr>
         </thead>
@@ -155,6 +161,9 @@
             {{ $cap := index .capabilities $capKey }}
             <li class="pv2">
               <strong>{{ .name }}:</strong> {{ $cap.details }}
+              {{ if $cap.docs_url }}
+                <a href="{{ $cap.docs_url }}" class="link blue hover-dark-blue ml2" target="_blank" rel="noopener noreferrer">[docs]</a>
+              {{ end }}
             </li>
           {{ end }}
         </ul>
