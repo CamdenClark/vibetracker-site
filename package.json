@@ -1,0 +1,13 @@
+{
+  "name": "vibetracker-site",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "validate": "bun run scripts/validate-schemas.ts",
+    "validate:watch": "bun run --watch scripts/validate-schemas.ts",
+    "prebuild": "bun run validate"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  }
+}
