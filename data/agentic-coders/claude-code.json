@@ -2,6 +2,7 @@
   "name": "Claude Code",
   "vendor": "Anthropic",
   "website": "https://claude.com/claude-code",
+  "docs_url": "https://code.claude.com/docs",
   "description": "Interactive CLI tool for software engineering tasks powered by Claude AI",
   "capabilities": {
     "slash_commands": {
@@ -31,7 +32,8 @@
     },
     "mcp_servers": {
       "supported": true,
-      "details": "Supports Model Context Protocol (MCP) servers for extensibility"
+      "details": "Supports Model Context Protocol (MCP) servers for extensibility",
+      "docs_url": "https://code.claude.com/docs/en/mcp"
     },
     "parallel_agents": {
       "supported": true,
@@ -39,7 +41,8 @@
     },
     "hooks": {
       "supported": true,
-      "details": "Supports custom hooks configured in settings that execute shell commands in response to events like tool calls"
+      "details": "Supports custom hooks configured in settings that execute shell commands in response to events like tool calls",
+      "docs_url": "https://code.claude.com/docs/en/settings"
     }
   },
   "pricing": {
