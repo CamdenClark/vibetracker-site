@@ -56,6 +56,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -70,6 +76,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -84,6 +96,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -98,6 +116,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -112,6 +136,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -126,6 +156,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -140,6 +176,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -154,6 +196,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -168,6 +216,12 @@
             "details": {
               "type": "string",
               "minLength": 1
+            },
+            "docs_url": {
+              "type": "string",
+              "description": "URL to documentation for this capability",
+              "format": "uri",
+              "pattern": "^https?://"
             }
           },
           "additionalProperties": false
@@ -197,6 +251,12 @@
       "format": "date",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
       "description": "Date when this configuration was last updated (YYYY-MM-DD)"
+    },
+    "docs_url": {
+      "type": "string",
+      "description": "URL to the official documentation",
+      "format": "uri",
+      "pattern": "^https?://"
     }
   },
   "additionalProperties": false

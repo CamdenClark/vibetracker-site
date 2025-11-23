@@ -13,6 +13,7 @@ interface Capability {
   supported: boolean;
   customizable?: boolean;
   details: string;
+  docs_url?: string;
 }
 
 interface AgenticCoderSchema {
@@ -36,6 +37,7 @@ interface AgenticCoderSchema {
     details: string;
   };
   last_updated: string;
+  docs_url?: string;
 }
 
 const REQUIRED_CAPABILITIES = [
@@ -96,10 +98,17 @@ function validateCapability(
     }
   }
 
+  // Validate docs_url if present
+  if ("docs_url" in capability) {
+    if (typeof capability.docs_url !== "string" || !validateURL(capability.docs_url)) {
+      errors.push(`${capabilityName}.docs_url must be a valid HTTP/HTTPS URL`);
+    }
+  }
+
   // Check for unexpected properties
   const allowedProps = capabilityName === "slash_commands"
-    ? ["supported", "details", "customizable"]
-    : ["supported", "details"];
+    ? ["supported", "details", "customizable", "docs_url"]
+    : ["supported", "details", "docs_url"];
 
   for (const key of Object.keys(capability)) {
     if (!allowedProps.includes(key)) {
@@ -180,6 +189,13 @@ function validateAgenticCoder(data: any, filename: string): string[] {
     errors.push("last_updated must be a valid date in YYYY-MM-DD format");
   }
 
+  // Validate docs_url if present
+  if ("docs_url" in data) {
+    if (typeof data.docs_url !== "string" || !validateURL(data.docs_url)) {
+      errors.push("docs_url must be a valid HTTP/HTTPS URL");
+    }
+  }
+
   // Check for unexpected top-level properties
   const allowedTopLevel = [
     "name",
@@ -189,6 +205,7 @@ function validateAgenticCoder(data: any, filename: string): string[] {
     "capabilities",
     "pricing",
     "last_updated",
+    "docs_url",
   ];
   for (const key of Object.keys(data)) {
     if (!allowedTopLevel.includes(key)) {
