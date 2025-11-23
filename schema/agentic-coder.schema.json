@@ -1,0 +1,203 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://vibetracker.site/schema/agentic-coder.schema.json",
+  "title": "Agentic Coder Configuration",
+  "description": "Schema for agentic coder tool configurations",
+  "type": "object",
+  "required": ["name", "vendor", "website", "description", "capabilities", "pricing", "last_updated"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the agentic coder tool",
+      "minLength": 1
+    },
+    "vendor": {
+      "type": "string",
+      "description": "The company or organization that provides the tool",
+      "minLength": 1
+    },
+    "website": {
+      "type": "string",
+      "description": "The official website URL",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "description": {
+      "type": "string",
+      "description": "A brief description of the tool",
+      "minLength": 1
+    },
+    "capabilities": {
+      "type": "object",
+      "description": "Feature capabilities of the tool",
+      "required": [
+        "slash_commands",
+        "multi_file_editing",
+        "codebase_understanding",
+        "git_integration",
+        "terminal_access",
+        "web_search",
+        "mcp_servers",
+        "parallel_agents",
+        "hooks"
+      ],
+      "properties": {
+        "slash_commands": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "customizable": {
+              "type": "boolean",
+              "description": "Whether users can create custom slash commands"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "multi_file_editing": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "codebase_understanding": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "git_integration": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "terminal_access": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "web_search": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "mcp_servers": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "parallel_agents": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "hooks": {
+          "type": "object",
+          "required": ["supported", "details"],
+          "properties": {
+            "supported": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "pricing": {
+      "type": "object",
+      "required": ["model", "details"],
+      "properties": {
+        "model": {
+          "type": "string",
+          "enum": ["subscription", "usage-based", "free", "hybrid"],
+          "description": "The pricing model of the tool"
+        },
+        "details": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Detailed pricing information"
+        }
+      },
+      "additionalProperties": false
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date when this configuration was last updated (YYYY-MM-DD)"
+    }
+  },
+  "additionalProperties": false
+}
